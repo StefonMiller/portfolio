@@ -1,0 +1,15 @@
+import React from 'react';
+import Hero from '../components/Hero.js'
+import Carousel from '../components/Carousel.js'
+
+function Homepage(props)
+{
+    return(
+        <div>
+            <Hero title={props.title} subTitle={props.subTitle} text={props.text}/>
+            <Carousel />
+        </div>
+    )
+}
+
+export default Homepage;
