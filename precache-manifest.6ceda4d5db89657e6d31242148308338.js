@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3f482d4729f41724589f76b9d4533097",
+    "revision": "663caa14912ec6c776bc0b59eeef6f69",
     "url": "/portfolio/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/portfolio/static/css/2.ad13008f.chunk.css"
   },
   {
-    "revision": "d38a7e699358fafdf9f9",
-    "url": "/portfolio/static/css/main.07b789df.chunk.css"
+    "revision": "44dad5c6f684006411fc",
+    "url": "/portfolio/static/css/main.bcb905d8.chunk.css"
   },
   {
     "revision": "db10e71bd7aa251d03c4",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/portfolio/static/js/2.b709e7f2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d38a7e699358fafdf9f9",
-    "url": "/portfolio/static/js/main.a7901b2d.chunk.js"
+    "revision": "44dad5c6f684006411fc",
+    "url": "/portfolio/static/js/main.e26fa027.chunk.js"
   },
   {
     "revision": "e5284505c87d0b24b753",
@@ -38,10 +38,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "4a23a74416bc572615700d3125efb0a2",
     "url": "/portfolio/static/media/discord.4a23a744.png"
-  },
-  {
-    "revision": "246be0636d00bf0a9fc1899bc4b19931",
-    "url": "/portfolio/static/media/eft.246be063.png"
   },
   {
     "revision": "0cb5a5c0d251c109458c85c6afeffbaa",
@@ -104,8 +100,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/portfolio/static/media/fa-solid-900.ec763292.svg"
   },
   {
-    "revision": "24e905a11eed92bf03ca242156a19229",
-    "url": "/portfolio/static/media/poke.24e905a1.png"
+    "revision": "c4f36022f6b78da5a50616246755a644",
+    "url": "/portfolio/static/media/maze.c4f36022.png"
   },
   {
     "revision": "4dd8a5462638c6c296bffa996068048d",
@@ -122,5 +118,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "4f9e6e49a87ef08ed2d18753753d7ed0",
     "url": "/portfolio/static/media/rustskins.4f9e6e49.gif"
+  },
+  {
+    "revision": "7a1f2fe01b6e65df7f2887a9163f99ae",
+    "url": "/portfolio/static/media/usb.7a1f2fe0.png"
   }
 ]);
