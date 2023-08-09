@@ -1,6 +1,8 @@
 import React from 'react';
 import Hero from '../components/Hero.js'
 import Content from '../components/Content.js'
+import SkinUpdate from '../assets/rustskins.gif'
+
 
 function CambotInfo(props)
 {
@@ -10,23 +12,24 @@ function CambotInfo(props)
             <Content fluid={true}>
 
                 <p>
-                    <a href='https://github.com/StefonMiller/CamBot' target="_blank" rel="noopener noreferrer" style={{color:'#BB86FC'}}>GitHub repo</a>
+                    <a href='https://github.com/StefonMiller/CamBot' target="_blank" rel="noopener noreferrer" style={{color:'#BB86FC'}}>View on Github</a>
                 </p>
 
-                <p>CamBot is a Discord bot written in Python that utilizes web scraping, machine learning, and SQL to collect and maintain data on the video game Rust. The project was my first experience with Python, which I grew to love over time. 
-                    The project itself took around 6 month of on and off development before I fixed most bugs and added all of the features I wanted.It was deployed to over 30 Discord servers with a total userbase of close to 1,000. For 
+                <p>CamBot is a Discord bot written in Python that utilizes web scraping, machine learning, and SQL to collect and maintain data on the video game Rust. This was my first experience with Python, which I grew to love over time. 
+                    The project itself took around 6 months of on and off development before I fixed most bugs and added all of the features I wanted. It was deployed to over 50 Discord servers with a total userbase of close to 2,000. For 
                     some of the more technical details, see below:</p>
 
-                <p>The data for each item/building block in the game is scraped from <a href='https://www.rustlabs.com' target="_blank" rel="noopener noreferrer" style={{color:'#BB86FC'}}>Rustlabs</a>, a website dedicated to collecting and updating information on the game after every update.
-                    Unfortunately, the website currently doesn't have an API to access the data so getting information on every(over 3000) item requires a traversal of each item's page. Since item stats/data only update on a monthly basis, I migrated the 
+                <p>The data itself is scraped from <a href='https://www.rustlabs.com' target="_blank" rel="noopener noreferrer" style={{color:'#BB86FC'}}>Rustlabs</a>, a website dedicated to collecting and updating information on Rust after every update.
+                    Unfortunately, the website currently doesn't have an API so accessing information on every(~3000) item requires a traversal of each item's page. Since item stats/data only update on a monthly basis, I migrated the 
                     web scraping, which was initially done for every command, to an update script that runs whenever new items are added or stats are updated. This provides users with quick access to the data while ensuring correctness.
                 </p>
 
                 <p>
                     CamBot also stores skin information, which is not readily available from the Rustlabs site. I really wanted to get initial prices on skins so users could monitor their investments to see how much certain skins increased/decreased over time.
-                    Getting prices of any new skins was easy, as I could just scrape the item store every week and enter the information into the database. I ended up creating a script that checks the item store for any updates and updates the database if any
+                    Getting initial prices of any new skins was easy, as I could just scrape the item store every week and enter the information into the database. I ended up creating a script that checks the item store for any updates and updates the database if any
                     changes are found. Getting data from older skins, however, was more of a hassle.</p>
                     
+                
                 <p> The Rust item store works in a weird way. Every week, new skins are sold for an initial price and have a 1 week cooldown before they can be sold on the Steam market. This leads to a rather large discrepancy between the first prices on the 
                     Steam marketplace and what the initial price of the actual item was. To get the actual initial prices, I had to improvise. I utilized 2 sources programatically to get the information I needed: the Wayback Machine, my own personal purchase history. 
                     To do this, I scraped all archives of the Rust item store from the Wayback Machine. As you can imagine, the website only had a few entries for the item store. From there, I scraped my own steam purchase history from the item store and was able to get a few new initial prices, but not a 
@@ -42,10 +45,10 @@ function CambotInfo(props)
                     module I had created and used it to predict the prices of any new skins that come out 1 year after purchase. Although it is currently impossible to determine the true accuracy of the model, some skins that I would not see retaining value
                     are predicted to lose value which is promising.
                 </p>
-
+                <img src={SkinUpdate} alt="Example of updated skins" height="200px" width="600px"/>
                 <p>
                     Once I had all of the information on items and skins in the SQLite database, implementing commands for the bot itself was a matter of executing an SQL query and formatting the output. Some commands I ended up adding were more involved, 
-                    particularly for the more server-oriented commands. An example of this would be the scrap system, which awards users in voice channels on the servers 1 scrap every 10 minutes. The system also manages the roles of all users in the server
+                    particularly for the more server-oriented commands. An example of this would be the scrap system, which awards users in voice channels 1 scrap every 10 minutes. The system also manages the roles of all users in the server
                     and promotes/demotes them whenever their scrap count breaks a certain threshold. 
                 </p>
 

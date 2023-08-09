@@ -1,7 +1,7 @@
 import React from 'react';
 import cambot from '../assets/discord.png';
-import poke from '../assets/poke.png';
-import eft from '../assets/eft.png';
+import poke from '../assets/maze.png';
+import eft from '../assets/usb.png';
 import Card from './Card.js';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -19,25 +19,25 @@ class Carousel extends React.Component
                 {
                     id: 0,
                     title: 'CamBot',
-                    subTitle: 'Discord bot incorporating web scraping, SQL, and ML',
+                    subTitle: 'Discord bot incorporating web scraping, SQL,\n and ML to provide data on the video game Rust',
                     imgSrc: cambot,
-                    link: '/cambot',
+                    link: '/portfolio#/cambot',
                     selected: false
                 },
                 {
                     id: 1,
-                    title: 'Pokémon Leveler',
-                    subTitle: 'Pokémon leveler written in Python',
+                    title: 'Pathfinding Comparison',
+                    subTitle: "Comparison of pathfinding algorithms on \n mazes generated with Eller\'s algorithm",
                     imgSrc: poke,
-                    link: '/project2',
+                    link: '/portfolio#/path',
                     selected: false
                 },
                 {
                     id: 2,
-                    title: 'EFT Drop Idler',
-                    subTitle: 'Chrome Extension that idles for Twitch drops',
+                    title: 'Automatic USB Installers',
+                    subTitle: 'Scripts that automatically create bootable OS installers',
                     imgSrc: eft,
-                    link: '/eft',
+                    link: '/portfolio#/usb',
                     selected: false
                 },
             ]

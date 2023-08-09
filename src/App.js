@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {HashRouter as Router, Route, Switch, Link} from 'react-router-dom';
 import Container from 'react-bootstrap/Container'
 import './App.css';
 import Navbar from 'react-bootstrap/Navbar';
@@ -10,8 +10,8 @@ import Aboutpage from './pages/About.js';
 import Projectpage from './pages/Projects.js';
 import Pdf from './assets/resume.pdf'
 import Project1 from './pages/cambot.js';
-import Project2 from './pages/eft.js';
-import Project3 from './pages/proj2.js';
+import Project2 from './pages/usb.js';
+import Project3 from './pages/path.js';
 
 class App extends React.Component
 {
@@ -27,13 +27,13 @@ class App extends React.Component
         {title: 'About', path: '/about'},
         {title: 'Projects', path: '/projects'},
         {title: 'project1', path: '/cambot'},
-        {title: 'project2', path: '/eft'},
-        {title: 'project3', path: '/project2'}
+        {title: 'project2', path: '/usb'},
+        {title: 'project3', path: '/path'}
       ],
       homepage:{
         title: 'Stefon Miller',
-        subTitle: 'Student at the University of Pittsburgh',
-        text: 'I am currently pursuing a B.S. in computer and information science at the University of Pittsburgh. I expect to graduate in the spring of 2022. Below you will find some of the things I\'ve been working on'
+        subTitle: 'Assigned Support Engineer at Coupa Software',
+        text: 'I am a graduate from the University of Pittsburgh with degrees in Computer and Information Science. Below you will find some of the things I\'ve been working on'
       },
       about: {
         title: 'Hi, I\'m Stefon!'
@@ -45,10 +45,10 @@ class App extends React.Component
         title: 'CamBot'
       },
       project2:{
-        title: 'EFT Drop Idler'
+        title: 'Automatic USB Installers'
       },
       project3:{
-        title: 'Pokémon Leveler'
+        title: 'Pathfinding Comparison'
       }
 
     }
@@ -59,7 +59,6 @@ class App extends React.Component
   render()
   {
     return (
-      <Router>
           <Container className="p-0 main-container dark-mode" fluid={true}>
             <Navbar className="border-bottom" bg="transparent" expand = "lg">
               <Link to="/"><Navbar.Brand style={{color:'white', fontWeight: "400"}}>Stefon Miller</Navbar.Brand></Link>
@@ -72,19 +71,33 @@ class App extends React.Component
                 </Nav>
               </Navbar.Collapse>
             </Navbar>
-
-            <Route path="/" exact render={() => <Homepage title={this.state.homepage.title} subTitle={this.state.homepage.subTitle} text={this.state.homepage.text} />} />
-            <Route path="/about" exact render={() => <Aboutpage title={this.state.about.title} subTitle={this.state.about.subTitle} text={this.state.about.text} />} />
-            <Route path="/projects" exact render={() => <Projectpage title={this.state.projects.title} subTitle={this.state.projects.subTitle} text={this.state.projects.text}/>} />
-            <Route path="/cambot" exact render={() => <Project1 title={this.state.project1.title} subTitle={this.state.project1.subTitle} text={this.state.project1.text}/>} />
-            <Route path="/eft" exact render={() => <Project2 title={this.state.project2.title} subTitle={this.state.project2.subTitle} text={this.state.project2.text}/>} />
-            <Route path="/project2" exact render={() => <Project3 title={this.state.project3.title} subTitle={this.state.project3.subTitle} text={this.state.project3.text}/>} />
+            <Router>
+              <Switch>
+                <Route exact path="/" exact render={() => <Homepage title={this.state.homepage.title} subTitle={this.state.homepage.subTitle} text={this.state.homepage.text} />}>
+                </Route>
+                <Route path="/about" exact render={() => <Aboutpage title={this.state.about.title} subTitle={this.state.about.subTitle} text={this.state.about.text} />}>
+                </Route>
+                <Route path="/projects" exact render={() => <Projectpage title={this.state.projects.title} subTitle={this.state.projects.subTitle} text={this.state.projects.text}/>}>
+                </Route>
+                <Route path="/cambot" exact render={() => <Project1 title={this.state.project1.title} subTitle={this.state.project1.subTitle} text={this.state.project1.text}/>}>
+                </Route>
+                <Route path="/usb" exact render={() => <Project2 title={this.state.project2.title} subTitle={this.state.project2.subTitle} text={this.state.project2.text}/>}>
+                </Route>
+                <Route path="/path" exact render={() => <Project3 title={this.state.project3.title} subTitle={this.state.project3.subTitle} text={this.state.project3.text}/>}>
+                </Route>
+              </Switch>
+            </Router>
+            {/*<Route path="/" exact render={() => <Homepage title={this.state.homepage.title} subTitle={this.state.homepage.subTitle} text={this.state.homepage.text} />} />*/}
+            {/*<Route path="/about" exact render={() => <Aboutpage title={this.state.about.title} subTitle={this.state.about.subTitle} text={this.state.about.text} />} />*/}
+            {/*<Route path="/projects" exact render={() => <Projectpage title={this.state.projects.title} subTitle={this.state.projects.subTitle} text={this.state.projects.text}/>} />*/}
+            {/*<Route path="/portfolio/cambot" exact render={() => <Project1 title={this.state.project1.title} subTitle={this.state.project1.subTitle} text={this.state.project1.text}/>} />*/}
+            {/*<Route path="/portfolio/eft" exact render={() => <Project2 title={this.state.project2.title} subTitle={this.state.project2.subTitle} text={this.state.project2.text}/>} />*/}
+            {/*<Route path="/portfolio/project2" exact render={() => <Project3 title={this.state.project3.title} subTitle={this.state.project3.subTitle} text={this.state.project3.text}/>} />*/}
             <div className="footer-div">
               <Footer />
             </div>
 
           </Container>
-      </Router>
     );
   }
   

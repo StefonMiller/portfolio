@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {HashRouter as Router} from 'react-router-dom';
 import './index.css';
 import '@fortawesome/fontawesome-free/css/all.min.css'; 
 import'bootstrap-css-only/css/bootstrap.min.css'; 
@@ -9,7 +10,11 @@ import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.css';
 
 ReactDOM.render(
-  <App/>,
+  <React.StrictMode>
+    <Router>
+      <App />
+    </Router>
+  </React.StrictMode>,
   document.getElementById('root')
 );
 

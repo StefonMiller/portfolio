@@ -46,6 +46,7 @@ code {
   margin-top: 10px;
   min-height: 100px;
   text-align:center;
+  white-space: pre-wrap;
 }
 
 .carousel-card-sub-title{
